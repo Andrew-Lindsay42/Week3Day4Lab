@@ -43,10 +43,14 @@
                 {% else %}
                     Recurring: <span>&#10060;</span>
                 {% endif %} <br>
-                <form action="/events/delete/{{events.index(event)}}" method = "post">
-                    <input type="submit" value="Delete event">
-                </form>
-                
+                <div id = "submit">
+                    <form action="/events/delete/{{events.index(event)}}" method = "post">
+                        <input type="submit" value="Delete">
+                    </form>
+                    <form action="/events/edit/{{events.index(event)}}" method = "post">
+                        <input type="submit" value="Edit">
+                    </form>
+                </div>
             </div>
         {% endfor %}
     </div>
