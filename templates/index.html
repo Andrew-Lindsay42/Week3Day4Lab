@@ -20,7 +20,11 @@
             <br>
             <label for="description">Description</label>
             <textarea name="description" id="description" cols="30" rows="2"></textarea>
+            <br>
+            <label for="recurring">Recurring</label>
+            <input type="checkbox" name="recurring" id="recurring">
             <input type="submit" value="Add event">
+            
         </form>
 
         {% for event in events %}
@@ -29,7 +33,8 @@
                 Name: {{event.name}} <br>
                 Guests: {{event.guest_number}} <br>
                 Room: {{event.room_location}} <br>
-                Description: {{event.description}} <br> <hr>
+                Description: {{event.description}} <br>
+                Recurring: {{event.recurring}} <br> <hr>
             </div>
         {% endfor %}
 
