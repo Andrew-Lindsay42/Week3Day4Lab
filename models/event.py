@@ -1,3 +1,5 @@
+import datetime
+
 class Event():
 
     def __init__(self, date, name, guest_number, room_location, description, recurring):
