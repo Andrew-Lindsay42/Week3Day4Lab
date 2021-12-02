@@ -6,28 +6,31 @@
     <body>
         <h1>Events List</h1>
 
-        <form action="/events" method="post">
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date">
-            <br>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name">
-            <br>
-            <label for="number">Guest number</label>
-            <input type="number" name="number" id="number">
-            <br>
-            <label for="location">Room</label>
-            <input type="text" name="location" id="location">
-            <br>
-            <label for="description">Description</label>
-            <textarea name="description" id="description" cols="30" rows="2"></textarea>
-            <br>
-            <label for="recurring">Recurring</label>
-            <input type="checkbox" name="recurring" id="recurring">
-            <input type="submit" value="Add event">
-            
-        </form>
+        <div id = "form">
+            <form action="/events" method="post">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date">
+                <br>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+                <br>
+                <label for="number">Guest number</label>
+                <input type="number" name="number" id="number">
+                <br>
+                <label for="location">Room</label>
+                <input type="text" name="location" id="location">
+                <br>
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description">
+                <br>
+                <label for="recurring">Recurring</label>
+                <input type="checkbox" name="recurring" id="recurring">
+                <input type="submit" value="Add event">
 
+                
+            </form>
+        </div>
+        <div id = "list">
         {% for event in events %}
             <div id = "events">
                 Date: {{event.date}} <br>
@@ -39,9 +42,13 @@
                     Recurring: <span>&#9989;</span>
                 {% else %}
                     Recurring: <span>&#10060;</span>
-                {% endif %} <br><hr>
+                {% endif %} <br>
+                <form action="/events/delete/{{events.index(event)}}" method = "post">
+                    <input type="submit" value="Delete event">
+                </form>
+                
             </div>
         {% endfor %}
-
+    </div>
     </body>
 </html>

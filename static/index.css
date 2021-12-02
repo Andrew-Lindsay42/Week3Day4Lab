@@ -4,7 +4,25 @@ body > h1 {
     color: fuchsia;
 }
 
-body > form > input {
+#form > form {
+    display: inline-block;
+    text-align: right;
+}
+
+#events {
+    margin: 2%;
+    padding: 2%;
+    border: 2px dotted maroon;
+    width: 25%;
     text-align: center;
     
+}
+
+#list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+body {
+    text-align: center;
 }
