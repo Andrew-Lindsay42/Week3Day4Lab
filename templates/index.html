@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Events List</title>
+    </head>
+    <body>
+        <h1>Events List</h1>
+
+        <form action="/events" method="post">
+            <label for="date">Date</label>
+            <input type="text" name="date" id="date">
+            <br>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="number">Guest number</label>
+            <input type="number" name="number" id="number">
+            <br>
+            <label for="location">Room</label>
+            <input type="text" name="location" id="location">
+            <br>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="2"></textarea>
+            <input type="submit" value="Add event">
+        </form>
+
+        {% for event in events %}
+            <div id = "events">
+                Date: {{event.date}} <br>
+                Name: {{event.name}} <br>
+                Guests: {{event.guest_number}} <br>
+                Room: {{event.room_location}} <br>
+                Description: {{event.description}} <br> <hr>
+            </div>
+        {% endfor %}
+
+    </body>
+</html>
